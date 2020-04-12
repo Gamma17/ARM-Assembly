@@ -1,0 +1,9 @@
+# Ignore all
+*
+
+# Unignore
+!*.s
+!.gitignore
+
+# Unignore all dirs
+!*/
