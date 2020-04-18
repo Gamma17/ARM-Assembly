@@ -11,22 +11,18 @@ _start:
 _bits:
 	TST R6, R9	@ Test bit by ANDing with mask. Set Z=1 if bit not set.
 	BEQ _print0	@ Branch if Z=1
-	MOV R8, R6	@ ???
 	MOV R0, #49	@ ASCII '1'
 	STR R0, [R1]
 	BL _write	@ Branch and Link stores address of next instruction in Link Register
-	MOV R6, R8	@ ???
 	BAL _noprint1	@ Branch Always
 
 _print0:
-	MOV R8, R6	@ ???
 	MOV R0, #48
 	STR R0, [R1]
 	BL _write
-	MOV R6, R8	@ ???
 
 _noprint1:
-	MOVS R9, R9, LSL #1
+	MOVS R9, R9, LSR #1
 	BNE _bits	@ More work to do if Z not set after MOVS
 
 _exit:

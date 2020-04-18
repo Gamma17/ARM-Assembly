@@ -1,5 +1,3 @@
-PROGRAMS = prog7a prog7b
-
 ifneq ($(MAKECMDGOALS),)
 	ifneq ($(MAKECMDGOALS),clean)
 		PROGRAMS = $(MAKECMDGOALS)
