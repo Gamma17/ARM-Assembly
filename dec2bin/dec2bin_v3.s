@@ -10,8 +10,8 @@ _start:
 
 _bits:
 	TST R6, R9	@ Test bit by ANDing with mask. Set Z=1 if bit not set.
-    MOVEQ R0, #48
-    MOVNE R0, #49
+    	MOVEQ R0, #48
+    	MOVNE R0, #49
 	STR R0, [R1]
 	BL _write	@ Branch and Link stores address of next instruction in Link Register
 
